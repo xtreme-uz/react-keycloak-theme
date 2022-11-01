@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.8bfb8af6.css","mappings":"AACA,UACC,SACD,CAEA,SACC,qBACD","sources":["KcApp.css"],"sourcesContent":["\n.my-color {\n\tcolor: red;\n}\n\n.my-font {\n\tfont-family: 'Work Sans';\n}"],"names":[],"sourceRoot":""}
