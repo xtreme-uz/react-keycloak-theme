@@ -1,16 +1,17 @@
 import { createRoot } from "react-dom/client";
-import { StrictMode, lazy, Suspense } from "react";
-import { kcContext } from "./KcApp/kcContext";
+import { StrictMode } from "react";
+import { kcContext } from "./kcContext";
+import KcApp from "KcApp";
 
-const App = lazy(() => import("./App"));
-const KcApp = lazy(() => import("./KcApp"));
-
-if (kcContext !== undefined) {
-    console.log(kcContext);
+if( kcContext === undefined ){
+    throw new Error(
+        "This app is a Keycloak theme" +
+        "It isn't meant to be deployed outside of Keycloak"
+    );
 }
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <Suspense>{kcContext === undefined ? <App /> : <KcApp kcContext={kcContext} />}</Suspense>
-    </StrictMode>,
+        <KcApp kcContext={kcContext} />
+    </StrictMode>
 );
